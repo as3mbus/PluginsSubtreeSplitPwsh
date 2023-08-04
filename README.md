@@ -1,6 +1,6 @@
 # Unreal Plugin Subtree Splitter
 
-![version](https://img.shields.io/badge/Version-1.0.0-brightgreen)
+![version](https://img.shields.io/badge/Version-2.0.0-brightgreen)
 
 <!-- TABLE OF CONTENTS -->
 Table of Contents
@@ -14,7 +14,14 @@ Table of Contents
 
 ## Overview
 
-This script automatically subtree split and tags based on uplugin version and directory names
+This script automatically do these following process :
+
+1. subtree split plugins directory folder specified in `dirName` param
+2. push split subtree to remote url specified in `repoUrl` param
+3. tag latest split commit with uplugin version name
+4. remove specified `dirName` plugin directory
+5. add submodule from `repoUrl` as `Plugins/$dirName`
+6. commit changes for steps 5, and 6.
 
 ## Dependency
 
@@ -25,8 +32,10 @@ This script automatically subtree split and tags based on uplugin version and di
 
 ## Usage
 
-1. fill out subtree config with folder name you want to split within Plugins Folder
-1. execute `SubtreeAutomation.ps1`
+1. move this script to project root folder
+2. execute `.\MigratePluginToSubmodule.ps1 -dirName <Plugin Directory Name> -repoUrl <submodule repo directory>`
+    - Plugin Directory Name example : `MyUnrealPlugin` will refer to `<Project Root Dir>/Plugins/MyUnrealPlugin`
+    - submodule repo url example : <https://github.com/username/MyUnrealPlugin.git>
 
 <!-- CONTRIBUTING -->
 
