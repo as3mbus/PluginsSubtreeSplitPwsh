@@ -87,6 +87,6 @@ foreach ($file in $upluginFiles) {
 
     Write-Host "add submodule"
     git submodule add $repoUrl "Plugins\$plugin"
-    git submodule commit -m "<Plugin Submodule Converter>: add $pluginDirName as submodule"
+    git commit -m "<Plugin Submodule Converter>: add $pluginDirName as submodule"
     git push origin
 }
