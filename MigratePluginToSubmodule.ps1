@@ -83,10 +83,10 @@ foreach ($file in $upluginFiles) {
 
     Write-Host "remove plugin directory"
     git rm -r $pluginDirectory
-    git commit -m "<Plugin Submodule Converter>: remove $pluginDirectory to be replaced with submodule"
+    git commit -m "Plugin Submodule Converter: remove $pluginDirectory to be replaced with submodule"
 
     Write-Host "add submodule"
     git submodule add $repoUrl "Plugins\$plugin"
-    git commit -m "<Plugin Submodule Converter>: add $pluginDirName as submodule"
+    git commit -m "Plugin Submodule Converter: add $pluginDirName as submodule"
     git push origin
 }
